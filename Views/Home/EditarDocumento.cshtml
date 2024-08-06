@@ -1,0 +1,34 @@
+﻿@model Documento
+
+<h2 class="Tex">Arquivo Word</h2>
+<div class="row">
+    <div class="col-md-12">
+
+        <form asp-action="EditarDocumento" asp-controller="Home" method="post">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <input type="hidden" asp-for="id" />
+
+
+            <div class="form-group mb-3">
+                <input asp-for="Titulo" class="form-control" />
+            </div>
+
+            <p>Criação: @Model.DataCriacao.ToString("dd/MM/yyyy HH:mm") -  Ulima alteração: @Model.DataCriacao.ToString("dd/MM/yyyy HH:mm")</p>
+
+
+            <div class="form-group mb-3">
+                <textarea asp-for="conteudo" style="width:81vw; height:50vh"></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-primary w-100" value="Editar" />
+
+            <a asp-action="RemoverDocumento" asp-route-id="@Model.id" class="btn btn-danger mt-3 w-100">Remover</a>
+
+            <a asp-action="Index" class="btn btn-info mt-3 w-100">Voltar</a>
+
+        </form>
+
+    </div>
+    </di>
